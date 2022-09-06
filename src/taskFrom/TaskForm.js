@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 
 const TaskForm = () => {
     const [users, setUsers] = useState([])
-    // const [user, setUser] = useState({})
 
     const handleSearch = (e) => {
         e.preventDefault();
