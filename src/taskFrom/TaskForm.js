@@ -3,6 +3,22 @@ import React, { useState } from 'react';
 
 const TaskForm = () => {
     const [users, setUsers] = useState([])
+    // const [user, setUser] = useState({})
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+        const text = e.target.user.value;
+        if (text === '') {
+            setUsers([])
+        }
+        else {
+            const search = users.find(u => u.name === text);
+            const newUser = [...users, search]
+            setUsers(newUser)
+        }
+
+
+    }
 
 
     return (
@@ -343,6 +359,10 @@ const TaskForm = () => {
                 )}
             </Formik>
             <div className='mt-5'>
+                <form onSubmit={handleSearch} action="">
+                    <input type="text" name='user' />
+                    <button type="submit">search</button>
+                </form>
                 {
                     users.map(user =>
                         <table class="table table-primary table-striped">
