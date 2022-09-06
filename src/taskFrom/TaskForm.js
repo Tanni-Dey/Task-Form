@@ -13,7 +13,8 @@ const TaskForm = () => {
         }
         else {
             const search = users.find(u => u.name === text);
-            const newUser = [...users, search]
+            const alluser = []
+            const newUser = [...alluser, search]
             setUsers(newUser)
         }
 
